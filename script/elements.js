@@ -1,12 +1,12 @@
 
-const form = document.querySelector('form')
+const form = document.querySelector('form');
 
 const input = document.getElementById('input');
-const labelAviso1 = document.getElementById('labelAviso1')
-const labelAviso2 = document.getElementById('labelAviso2')
+const labelAviso1 = document.getElementById('labelAviso1');
+const labelAviso2 = document.getElementById('labelAviso2');
 
-const btnAdd = document.getElementById('button-addd')
-const btnDel = document.getElementById('btn-delete')
+const btnAdd = document.getElementById('button-addd');
+const btnDel = document.getElementById('btn-delete');
 
 const ulTarefas = document.getElementById('ulTarefas');
 

@@ -10,9 +10,9 @@ import {
 
 
 form.addEventListener('submit', (e) => {
-    e.preventDefault()
+    e.preventDefault();
 
-    let inputTarefaEscrita = input.value.toLowerCase()
+    let inputTarefaEscrita = input.value.toLowerCase();
 
     if (!inputTarefaEscrita.trim(" ")) {
         labelAviso1.classList.remove('aviso')
