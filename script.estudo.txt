@@ -1,0 +1,72 @@
+const form = document.querySelector('form') //busca o tag html
+const inputMapeado = form.querySelector('input')
+const liSectionHTML = document.getElementsByClassName('li')
+const ul = document.querySelector('ul')
+
+// form.onsubmit = function (event) {
+//     event.preventDefault()
+// } // se for somente ter um evento
+
+// form.onsubmit = function (event) {
+//     console.log('qlqr coisa')
+// }
+//form.addEventListener('Nome do evento', callback) // se tiver mais de um, usar o addEventListner
+//event é a funcionalidade
+
+
+form.addEventListener('submit', (e) => {
+    e.preventDefault()
+
+
+
+
+    const valorDoInput = inputMapeado.value ///pegando o valor no input
+    const li = document.createElement('li') ///criei o elemento(ele esta vazio, precisa ser atribuido algo dentro dele)
+    li.setAttribute("class", "li") /// setAtrribute é pra colocar os atributos do acc''
+
+
+
+    li.textContent = valorDoInput
+    ul.appendChild(li) ///appendChild empurra a tag li para dentro da ul (adiciona como filho)
+
+    const button = document.createElement('button')
+    button.setAttribute("class", "delete")
+
+    const novoArray = Array.from(liSectionHTML)
+    const callback = novoArray.forEach((elementoAtual) => {
+
+        console.log(elementoAtual.textContent.includes(valorDoInput))
+
+        // console.log(4, elementoAtual.textContent)
+    })
+
+    // button.textContent = "x"
+    li.appendChild(button)
+    inputMapeado.value = " "
+
+    console.log(callback)
+
+
+})
+//pegar o valor no input
+//criar elementos/tags no html
+//adicionar o elemento na html
+
+// form.addEventListener("submit", (e) => {
+//     e.preventDefault()
+
+//     const input = form.querySelector('input')
+//     const valorDoInput = input.value
+
+//     ul.innerHTML += `<li class="li">${valorDoInput}</li>`
+// })
+
+ul.onclick = function (event) {
+    //  console.log(event.currentTarget) // ele seleciona TODA a tag (é o cara que esta chamando o evento)
+    // console.log(event.target) // seleciona apenas onde foi clicado
+    if (event.target.classList.contains('delete')) {
+        if (confirm("Deseja deletar esse item?")) {
+            event.target.parentElement.remove()
+        }
+    }
+}
