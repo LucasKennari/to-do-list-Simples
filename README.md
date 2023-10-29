@@ -19,3 +19,5 @@ criar um fork e dar um git clone no terminal da sua IDE
 --Verificar se tem alguma coisa escrita
 
 --Apagar tarefa
+
+Obs: Os dados das tarefas são persistidas apenas em memoria, e não em local storage.
